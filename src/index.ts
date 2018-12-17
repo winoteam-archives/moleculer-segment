@@ -84,7 +84,7 @@ export default {
     this.logger.debug('Init segment')
     this.client = new Analytics(
       this.settings.write_key,
-      process.env.NODE_ENV != 'production' ? { flush: 1 } : {},
+      process.env.NODE_ENV != 'production' ? { flush: 1, enable: false } : {},
     )
 
     return this.Promise.resolve()
